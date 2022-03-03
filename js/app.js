@@ -63,7 +63,6 @@ const displaySearchResult = phones => {
     const showPhones = phones;
     document.getElementById('found-length').innerText = `Available ${phones.length} phones now`;
 
-
     showPhones?.map(phone => {
         let { slug, image, phone_name, brand } = phone;
         const div = document.createElement('div');
@@ -77,10 +76,6 @@ const displaySearchResult = phones => {
         </div>`;
         productContainer.appendChild(div);
     });
-}
-
-const showAllPhones = () => {
-
 }
 
 // Call API and Display Details
