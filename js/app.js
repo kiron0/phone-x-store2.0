@@ -61,7 +61,7 @@ const displaySearchResult = phones => {
         searchField.value = '';
     }
     const showPhones = phones;
-    document.getElementById('found-length').innerText = `Found: ${phones.length} phones`;
+    document.getElementById('found-length').innerText = `Available ${phones.length} phones now`;
 
 
     showPhones?.map(phone => {
