@@ -12,12 +12,12 @@ document
     });
 
 // show phones on when website loaded
-const loadPhones = () => {
-    fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
-        .then((res) => res.json())
-        .then((data) => displaySearchResult(data.data));
-};
-loadPhones();
+// const loadPhones = () => {
+//     fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
+//         .then((res) => res.json())
+//         .then((data) => displaySearchResult(data.data));
+// };
+// loadPhones();
 
 // search phones
 const searchPhones = () => {
@@ -87,14 +87,15 @@ const displaySearchResult = (phones) => {
         const div = document.createElement("div");
         div.classList.add("col");
         div.innerHTML = `
-        <div class="card shadow-none">
+        <div class="card">
             <img src="${image}" />
             <p class="text-center mb-1 mt-3">${phone_name}</p>
             <p class="text-center mb-2 mt-1">${brand}</p>
-            <button onclick="singleProduct('${slug}')" class="btn btn-dark details-btn" data-bs-toggle="modal" data-bs-target="#single">Details</button>
+            <button onclick="singleProduct('${slug}')" class="details-btn" data-bs-toggle="modal" data-bs-target="#single">Details</button>
         </div>`;
         productContainer.appendChild(div);
     });
+    document.getElementById("search-field").value = '';
 };
 
 // toggle show button
@@ -150,3 +151,14 @@ const singleProduct = async (id) => {
         document.querySelector(".loading").style.display = "none";
     }, 500);
 };
+
+let themeToggler = document.querySelector('#theme-toggler');
+
+themeToggler.onclick = () => {
+  themeToggler.classList.toggle('fa-sun');
+  if (themeToggler.classList.contains('fa-sun')) {
+    document.body.classList.add('active');
+  } else {
+    document.body.classList.remove('active');
+  }
+}
