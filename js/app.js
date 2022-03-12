@@ -131,7 +131,7 @@ const singleProduct = async (id) => {
         }`;
     document.getElementById(
         "sensors"
-    ).innerText = `Sensors: ${mainFeatures.sensors.map((x) => x + " ")}`;
+    ).innerText = `Sensors: ${mainFeatures.sensors.join(", ")}`;
     document.getElementById("bluetooth").innerText = `Bluetooth: ${others?.Bluetooth ? others.Bluetooth : "not available"
         }`;
     document.getElementById("gps").innerText = `GPS: ${others?.GPS ? others.GPS : "not available"
