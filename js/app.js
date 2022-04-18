@@ -12,12 +12,12 @@ document
     });
 
 // show phones on when website loaded
-// const loadPhones = () => {
-//     fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
-//         .then((res) => res.json())
-//         .then((data) => displaySearchResult(data.data));
-// };
-// loadPhones();
+const loadPhones = () => {
+    fetch("https://openapi.programming-hero.com/api/phones?search=iphone")
+        .then((res) => res.json())
+        .then((data) => displaySearchResult(data.data));
+};
+loadPhones();
 
 // search phones
 const searchPhones = () => {
